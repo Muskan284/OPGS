@@ -11,6 +11,8 @@ var express=require("express"),
     methodoverride=require("method-override");
 var app=express();
 
+app.set('port',(process.env.PORT || 5000));
+
 //mongoose.connect("mongodb://localhost/camp3");
 mongoose.connect("mongodb+srv://muskan:muskan@pg-finder-zjik7.mongodb.net/test?retryWrites=true&w=majority");
 
@@ -439,4 +441,6 @@ function iscommentor(req,res,next)
 }
 
 console.log("server started");
-app.listen(8001,'127.0.0.1');
+app.listen(app.get('port'),function(){
+  console.log("server started");
+});
