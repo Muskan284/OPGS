@@ -1,0 +1,16 @@
+.thumbnail img{
+    width: 100%;
+}
+
+.thumbnail{
+    padding: 0;
+}
+
+body {
+    background-attachment: scroll;
+    background-size: cover;
+}
+
+.home {
+    
+}

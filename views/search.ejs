@@ -1,0 +1,26 @@
+<% include ../partials/header %>
+
+<div class="row"  style="display:flex; flex-wrap:wrap;">
+        <% f=0 %>
+        <% for(var i=0;i< camp.length ; i++){ %>
+           <% if(camp[i].location_city== city){ %>
+            <% f=1 %>
+            <div class="col-md-3  col-sm-6 ">
+                <div class="thumbnail">
+                        <img src="/uploads/<%= camp[i].image %>" >
+                        <div class="caption">
+                                <h4> <%= camp[i].name %> </h4>
+                        </div>
+                        <a  class="btn btn-primary" href="/campgrounds/<%= camp[i]._id %>"> More info </a>
+                </div>
+            </div>
+            <% } %>
+        <% } %>
+        <% if(f==0) {%>
+            <div class="container">
+                    <p>Oops! No PG found in <%= city %></p>
+            </div>
+        <% } %>  
+</div>
+
+<% include ../partials/footer %>

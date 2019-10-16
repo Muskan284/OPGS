@@ -1,0 +1,34 @@
+<% include ../partials/header %>
+<div class="container">
+<header class="jumbotron">
+    <h1>PG Finder </h1>
+    <a  class="btn btn-primary btn-lg" href="/campgrounds/new" >Post your PG</a>
+</header>
+
+<div class="container">
+                <form action="/campgrounds/search" method="POST" >
+                        <div class="form-group">    
+                                       <input class="form-control" type="text" name="city" placeholder="City">
+                        </div>
+                        <div class="form-group">
+                                        <button class="btn btn-primary">Search</button>
+                        </div>
+                </form>
+</div>
+<div class="row"  style="display:flex; flex-wrap:wrap;">
+<% for(var i=0;i< camp.length; i++){ %>
+	<div class="col-md-3  col-sm-6 ">
+        <div class="thumbnail">
+                <!-- <img src="/uploads/"+"<%= camp[i].image %>" >  -->
+                <img src="/uploads/<%= camp[i].image %>" >
+                <div class="caption">
+                        <h4> <%= camp[i].name %> </h4>
+                </div>
+                <a  class="btn btn-primary" href="/campgrounds/<%= camp[i]._id %>"> More info </a>
+        </div>
+	</div>
+<% } %>
+</div>
+</div>
+
+<% include ../partials/footer %>
