@@ -11,8 +11,8 @@ var express=require("express"),
     methodoverride=require("method-override");
 var app=express();
 
-mongoose.connect("mongodb://localhost/camp3");
-
+//mongoose.connect("mongodb://localhost/camp3");
+mongoose.connect("mongodb+srv://muskan:muskan@pg-finder-zjik7.mongodb.net/test?retryWrites=true&w=majority");
 
 
 var userSchema =new mongoose.Schema({
