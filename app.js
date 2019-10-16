@@ -12,6 +12,7 @@ var express=require("express"),
 var app=express();
 
 app.set('port',(process.env.PORT || 5000));
+app.set('host',(process.env.HOST || '127.0.0.1'));
 
 //mongoose.connect("mongodb://localhost/camp3");
 mongoose.connect("mongodb+srv://muskan:muskan@pg-finder-zjik7.mongodb.net/test?retryWrites=true&w=majority");
@@ -441,6 +442,6 @@ function iscommentor(req,res,next)
 }
 
 console.log("server started");
-app.listen(app.get('port'),'127.0.0.1',function(){
+app.listen(app.get('port'),app.get('host'),function(){
   console.log("server started");
 });
