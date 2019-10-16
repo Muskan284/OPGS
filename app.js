@@ -441,6 +441,6 @@ function iscommentor(req,res,next)
 }
 
 console.log("server started");
-app.listen(app.get('port'),function(){
+app.listen(app.get('port'),'127.0.0.1',function(){
   console.log("server started");
 });
