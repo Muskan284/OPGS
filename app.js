@@ -14,7 +14,8 @@ var app=express();
 app.set('port',(process.env.PORT || 5000));
 app.set('host',(process.env.HOST || '127.0.0.1'));
 
-//mongoose.connect("mongodb://localhost/camp3");
+console.log(process.env.dburl);
+//mongoose.connect(process.env.dburl);
 mongoose.connect("mongodb+srv://muskan:muskan@pg-finder-zjik7.mongodb.net/test?retryWrites=true&w=majority");
 
 
