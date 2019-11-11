@@ -9,6 +9,7 @@ var express=require("express"),
     passportlocalmongoose=require("passport-local-mongoose"),
     expresssession=require("express-session"),
     methodoverride=require("method-override");
+    favicon = require('serve-favicon');
 var app=express();
 
 app.set('port',(process.env.PORT || 5000));
@@ -16,7 +17,7 @@ app.set('host',(process.env.HOST || '127.0.0.1'));
 
 console.log(process.env.dburl);
 //mongoose.connect(process.env.dburl);
-mongoose.connect("mongodb+srv://muskan:muskan@pg-finder-zjik7.mongodb.net/test?retryWrites=true&w=majority");
+mongoose.connect("mongodb://muskan:muskan@pg-finder-shard-00-00-zjik7.mongodb.net:27017,pg-finder-shard-00-01-zjik7.mongodb.net:27017,pg-finder-shard-00-02-zjik7.mongodb.net:27017/test?ssl=true&replicaSet=pg-finder-shard-0&authSource=admin&retryWrites=true&w=majority");
 
 
 var userSchema =new mongoose.Schema({
@@ -87,8 +88,9 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.set("view engine","ejs");
 app.use(express.static(__dirname+"/partials"));
 app.use(express.static(__dirname+"/public"));
+app.use(favicon(__dirname + '/public/icon.jpeg'));
 app.use(expresssession({
-  secret:"amardeep",
+  secret:"easy stay",
   resave: false,
   saveUnintialized:false
 
