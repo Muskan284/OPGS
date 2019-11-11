@@ -15,7 +15,8 @@ You must have npm installed in your computer (is installed along with Nodejs).
  Install MongoDB for Windows from the official website.
  Run the mongodb server by running the mongod.exe executable from the bin folder of the MongoDB installation folder.
  
-4. For Other Platforms
+ 
+ 4. For Other Platforms
 This project uses MongoDB as its backend database. You can install it by following the instructions provided in their official site.
 
 5.Install the dependencies and devDependencies
